@@ -27,11 +27,11 @@ Max Hasselwander
 Ziele, Produkt Vision/ Idee, Dokumentation, Anforderungen
 ### Scrum Master 
 Simon Tenger 
-**Aufgabe**
+**Aufgaben**
 Scrum Meetings leiten, Dokumentation, Sicherstellung der Arbeit, beseitigen von Hindernissen
 ### Lead Entwickler
 Mykhaylo Zhovkevych
-**Aufgabe** 
+**Aufgaben** 
 Haupsächliche verantwortung der Entwicklung
 
 ## User Stories und Aktzeptanzkriterien 
