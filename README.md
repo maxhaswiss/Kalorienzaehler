@@ -8,5 +8,16 @@
 ## Vision:
 Unsere Vision ist es einen posiviten Beitrag zur Gesundheit in der Schweiz und der Welt zu liefern indem wir es Usern so einfach wie möglich machen ihre Kalorien zu tracken.
 
-## Ziele:
+## Zielen
+- Benutzerfreundlichkeit und Zugänglichkeit:
+    - [ ] Die Web-App soll ein einfaches, intuitives Interface bieten, das ohne lange Einarbeitung genutzt werden     kann.
+    - Die Oberfläche muss klar strukturiert und für alle Bildschirmgrössen (Responsive Design) optimiert sein.
+    - Mehrsprachige Unterstützung, um eine breite Nutzerbasis anzusprechen.
+- Effektives Kalorientracking:
+    1. Eine umfassende Lebensmitteldatenbank bereitstellen, die den Nutzern erlaubt, schnell und einfach Kalorien zu suchen und hinzuzufügen.
+    2. Individuelle Namenseinsetzung und Hinzufügung von Kalorien.
+
+- Datenschutz und Sicherheit:
+    -  Alle personenbezogenen Daten, einschliesslich Gesundheitsdaten, müssen verschlüsselt/sicher gespeichert werden.
+
 
