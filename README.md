@@ -78,3 +78,11 @@ _Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen
 - Der tägliche Gesamtkalorienwert wird klar und deutlich angezeigt.
 - Die Übersicht wird täglich zurückgesetzt und speichert historische Daten.
 
+### Reihenfolge (Priorisierung):
+
+1. Mahlzeiteneingabe (User Story 1)
+2. Nährwertangaben hinzufügen (User Story 2)
+3. Ernährungsziele festlegen (User Story 3)
+4. Tagesübersicht der Kalorienzufuhr (User Story 4)
+
+Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen der App und priorisiert die Entwicklungsschritte.
