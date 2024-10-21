@@ -19,5 +19,18 @@ Unsere Vision ist es einen posiviten Beitrag zur Gesundheit in der Schweiz und d
 
 - Datenschutz und Sicherheit:
     -  Alle personenbezogenen Daten, einschliesslich Gesundheitsdaten, müssen verschlüsselt/sicher gespeichert werden.
+## Rollen in unserem Projekt
 
+### Product Owner 
+Max Hasselwander 
+**Aufgaben**
+Ziele, Produkt Vision/ Idee, Dokumentation, Anforderungen
+### Scrum Master 
+Simon Tenger 
+**Aufgabe**
+Scrum Meetings leiten, Dokumentation, Sicherstellung der Arbeit, beseitigen von Hindernissen
+### Lead Entwickler
+Mykhaylo Zhovkevych
+**Aufgabe** 
+Haupsächliche verantwortung der Entwicklung
 
