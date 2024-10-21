@@ -34,3 +34,47 @@ Mykhaylo Zhovkevych
 **Aufgabe** 
 Haupsächliche verantwortung der Entwicklung
 
+## User Stories und Aktzeptanzkriterien 
+
+### 1. **User Story**:
+
+_Als Nutzer möchte ich meine täglichen Mahlzeiten eingeben, damit ich die aufgenommenen Kalorien verfolgen kann._
+
+**Akzeptanzkriterien**:
+
+- Der Nutzer kann eine neue Mahlzeit hinzufügen.
+- Jede Mahlzeit enthält mindestens den Namen des Lebensmittels und die Menge.
+- Die Kalorienzahl wird automatisch basierend auf der Menge berechnet.
+- Die Mahlzeit wird korrekt im Tagesprotokoll gespeichert.
+
+### 2. **User Story**:
+
+_Als Nutzer möchte ich Nährwerte (wie Fett, Kohlenhydrate, Proteine) zu den Mahlzeiten hinzufügen, damit ich meine Ernährung besser überwachen kann._
+
+**Akzeptanzkriterien**:
+
+- Der Nutzer kann Nährwertinformationen (Fett, Kohlenhydrate, Proteine) für jede Mahlzeit hinzufügen.
+- Die Nährwerte werden in der Zusammenfassung der Mahlzeit angezeigt.
+- Die App aktualisiert die täglichen Gesamtwerte für Fett, Kohlenhydrate und Proteine.
+
+### 3. **User Story**:
+
+_Als Nutzer möchte ich meine Ernährungsziele (z. B. tägliche Kalorienmenge) festlegen, um meinen Fortschritt im Auge zu behalten._
+
+**Akzeptanzkriterien**:
+
+- Der Nutzer kann ein tägliches Kalorienziel festlegen.
+- Die App zeigt an, wie viele Kalorien der Nutzer im Verhältnis zu seinem Ziel aufgenommen hat.
+- Eine visuelle Anzeige (z. B. Fortschrittsbalken) gibt den aktuellen Stand im Verhältnis zum Ziel wieder.
+
+### 4. **User Story**:
+
+_Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen, um meinen Fortschritt nachverfolgen zu können._
+
+**Akzeptanzkriterien**:
+
+- Der Nutzer kann eine tägliche Übersicht seiner Kalorienzufuhr einsehen.
+- Die Übersicht zeigt eine Aufschlüsselung der Kalorien pro Mahlzeit.
+- Der tägliche Gesamtkalorienwert wird klar und deutlich angezeigt.
+- Die Übersicht wird täglich zurückgesetzt und speichert historische Daten.
+
