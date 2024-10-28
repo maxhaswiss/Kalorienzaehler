@@ -111,6 +111,6 @@ Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen de
 ### Sprint Goal 28.10.2024
 Wir schaffen heute die User Story 1 fertig mit Dokumentation und Testing 
 
-**Jan** Frontend
-**Mykhaylo** Backend
-**Max** Dokumentation, Testing und Hilfe
+**Jan** Frontend <br>
+**Mykhaylo** Backend <br>
+**Max** Dokumentation, Testing und Hilfe <br>
