@@ -12,13 +12,13 @@ Unsere Vision ist es einen posiviten Beitrag zur Gesundheit in der Schweiz und d
 - Benutzerfreundlichkeit und Zugänglichkeit:
     - [ ] Die Web-App soll ein einfaches, intuitives Interface bieten, das ohne lange Einarbeitung genutzt werden     kann.
     -  [ ] Die Oberfläche muss klar strukturiert und für alle Bildschirmgrössen (Responsive Design) optimiert sein.
-    - [ ]Mehrsprachige Unterstützung, um eine breite Nutzerbasis anzusprechen.
+    - [ ] Mehrsprachige Unterstützung, um eine breite Nutzerbasis anzusprechen.
 - Effektives Kalorientracking:
-    1. Eine umfassende Lebensmitteldatenbank bereitstellen, die den Nutzern erlaubt, schnell und einfach Kalorien zu suchen und hinzuzufügen.
-    2. Individuelle Namenseinsetzung und Hinzufügung von Kalorien.
+    - [ ] Eine umfassende Lebensmitteldatenbank bereitstellen, die den Nutzern erlaubt, schnell und einfach Kalorien zu suchen und hinzuzufügen.
+    - [ ] Individuelle Namenseinsetzung und Hinzufügung von Kalorien.
 
 - Datenschutz und Sicherheit:
-    -  Alle personenbezogenen Daten, einschliesslich Gesundheitsdaten, müssen verschlüsselt/sicher gespeichert werden.
+    - [ ]  Alle personenbezogenen Daten, einschliesslich Gesundheitsdaten, müssen verschlüsselt/sicher gespeichert werden.
 ## Rollen in unserem Projekt
 
 ### Product Owner 
@@ -93,13 +93,12 @@ Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen de
 <hr>
 
 ### 5. Backlog
-- die alle Points von **1. User Story**
-- die alle Points von **2. User Story**
-- die alle Points von **3. User Story**
-- die alle Points von **4. User Story**
-
-## optional
-- Die Mahlzeit wird korrekt im Tagesprotokoll gespeichert.
+    - die alle Points von 1. User Story
+    - die alle Points von 2. User Story
+    - die alle Points von 3. User Story
+    - die alle Points von 4. User Story
+    - optional:
+    - Die Mahlzeit wird korrekt im Tagesprotokoll gespeichert.
 
 
 ## Story Points Tabelle 
