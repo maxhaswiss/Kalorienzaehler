@@ -109,12 +109,14 @@ Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen de
 | Als Nutzer möchte ich meine Ernährungsziele (z. B. tägliche Kalorienmenge) festlegen, um meinen Fortschritt im Auge zu behalten.         | 8            |    3    |
 | Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen, um meinen Fortschritt nachverfolgen zu können        |      13       |    4    |
 
-### Sprint Goal 28.10.2024
-Wir schaffen heute die User Story 1 fertig mit Dokumentation und Testing 
+## Sprint Backlog 28.10.2024
+Wir schaffen heute die [User Story 1](#1-user-story) fertig mit Dokumentation und Testing 
 
 **Jan** Frontend <br>
 **Mykhaylo** Backend <br>
 **Max** Dokumentation, Testing und Hilfe <br>
+
+### Testplan User Story 1 28.10.2024
 
 | TestID | Testname                                                  | Anforderungen                                                                     | Testprozess                                                            | Erwartetes Ergebnis                                                     |
 | ------ | --------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
