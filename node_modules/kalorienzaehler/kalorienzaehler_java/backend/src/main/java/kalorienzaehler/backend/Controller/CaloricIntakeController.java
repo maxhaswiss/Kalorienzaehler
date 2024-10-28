@@ -1,4 +1,4 @@
-package main.java.kalorienzaehler.backend.Controller;
+package main.java.kalorienzaehler.backend.controller;
 
 import main.java.kalorienzaehler.backend.entity.CaloricIntake;
 import main.java.kalorienzaehler.backend.service.CaloricIntakeService;
