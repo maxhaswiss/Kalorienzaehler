@@ -11,8 +11,8 @@ Unsere Vision ist es einen posiviten Beitrag zur Gesundheit in der Schweiz und d
 ## Zielen
 - Benutzerfreundlichkeit und Zugänglichkeit:
     - [ ] Die Web-App soll ein einfaches, intuitives Interface bieten, das ohne lange Einarbeitung genutzt werden     kann.
-    - Die Oberfläche muss klar strukturiert und für alle Bildschirmgrössen (Responsive Design) optimiert sein.
-    - Mehrsprachige Unterstützung, um eine breite Nutzerbasis anzusprechen.
+    -  [ ] Die Oberfläche muss klar strukturiert und für alle Bildschirmgrössen (Responsive Design) optimiert sein.
+    - [ ]Mehrsprachige Unterstützung, um eine breite Nutzerbasis anzusprechen.
 - Effektives Kalorientracking:
     1. Eine umfassende Lebensmitteldatenbank bereitstellen, die den Nutzern erlaubt, schnell und einfach Kalorien zu suchen und hinzuzufügen.
     2. Individuelle Namenseinsetzung und Hinzufügung von Kalorien.
@@ -22,15 +22,15 @@ Unsere Vision ist es einen posiviten Beitrag zur Gesundheit in der Schweiz und d
 ## Rollen in unserem Projekt
 
 ### Product Owner 
-Max Hasselwander 
+Max Hasselwander <br>
 **Aufgaben**
 Ziele, Produkt Vision/ Idee, Dokumentation, Anforderungen
 ### Scrum Master 
-Simon Tenger 
+Simon Tenger / Jan Gsell <br>
 **Aufgaben**
 Scrum Meetings leiten, Dokumentation, Sicherstellung der Arbeit, beseitigen von Hindernissen
 ### Lead Entwickler
-Mykhaylo Zhovkevych
+Mykhaylo Zhovkevych <br>
 **Aufgaben** 
 Haupsächliche verantwortung der Entwicklung
 
