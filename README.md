@@ -36,6 +36,8 @@ Haupsächliche verantwortung der Entwicklung
 
 <hr>
 
+## Definition of Done
+Unsere Definiton einer Fertigen User Story, ist wenn sie fertig programmiert ist und die Tests erfolgreich waren.
 ## User Stories und Aktzeptanzkriterien 
 
 ### 1. **User Story**:
