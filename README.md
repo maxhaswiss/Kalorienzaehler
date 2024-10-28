@@ -115,3 +115,9 @@ Wir schaffen heute die User Story 1 fertig mit Dokumentation und Testing
 **Jan** Frontend <br>
 **Mykhaylo** Backend <br>
 **Max** Dokumentation, Testing und Hilfe <br>
+
+| TestID | Testname                                                  | Anforderungen                                                                     | Testprozess                                                            | Erwartetes Ergebnis                                                     |
+| ------ | --------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 1      | man kann eine Mahlzeit hinzufügen                         | Mahlzeit ist eine Tabelle in SQL,<br>SQL läuft<br>Frontend hat ein Eingabefenster | 1. auf Website gehen<br>2. Mahlzeit eintragen                          | Mahlzeit wird erfolgreich gespeichert                                   |
+| 2      | Jede Mahlzeit hat mindestens einen Namen und die Menge    | TestID 1<br>constraints funktionieren in SQL. Übersicht von Mahlzeiten            | 1. Auf Website gehen<br>2. Name und ergebnis leerlassen und abschicken | Error message: Man kann keine Mahlzeiten ohne Namen oder Menge eingeben |
+| 3      | Die Kalorienzahl wird Automatisch berechnet je nach menge | TestID 1<br>TestID 2<br>Umrechnung funktioniert                                   | 1. Auf Website gehen<br>2. Mahlzeit Hinzufügen<br>                     | Kalorien sind richtig und automatisch berechnet                         |
