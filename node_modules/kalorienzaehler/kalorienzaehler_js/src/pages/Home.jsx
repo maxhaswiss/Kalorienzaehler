@@ -3,7 +3,7 @@ export default function Home() {
   return(
     <>
     <h1>Willkommen zum Kalorienzähler</h1>
-    <div>
+    <div className='home-box'>
       <hr />
       <p>
         Text
