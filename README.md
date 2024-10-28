@@ -34,6 +34,8 @@ Mykhaylo Zhovkevych <br>
 **Aufgaben** 
 Haupsächliche verantwortung der Entwicklung
 
+<hr>
+
 ## User Stories und Aktzeptanzkriterien 
 
 ### 1. **User Story**:
@@ -43,9 +45,8 @@ _Als Nutzer möchte ich meine täglichen Mahlzeiten eingeben, damit ich die aufg
 **Akzeptanzkriterien**:
 
 - Der Nutzer kann eine neue Mahlzeit hinzufügen.
-- Jede Mahlzeit enthält mindestens den Namen des Lebensmittels und die Menge.
+- Jede Mahlzeit enthält mindestens den Namen des Lebensmittels und die Menge. 
 - Die Kalorienzahl wird automatisch basierend auf der Menge berechnet.
-- Die Mahlzeit wird korrekt im Tagesprotokoll gespeichert.
 
 ### 2. **User Story**:
 
@@ -74,7 +75,7 @@ _Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen
 **Akzeptanzkriterien**:
 
 - Der Nutzer kann eine tägliche Übersicht seiner Kalorienzufuhr einsehen.
-- Die Übersicht zeigt eine Aufschlüsselung der Kalorien pro Mahlzeit.
+- Die Übersicht zeigt eine Aufschlüsselung der Kalorien pro Mahlzeit(Frühstück, Mittagessen, Abendessen und Snacks).
 - Der tägliche Gesamtkalorienwert wird klar und deutlich angezeigt.
 - Die Übersicht wird täglich zurückgesetzt und speichert historische Daten.
 
@@ -86,3 +87,25 @@ _Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen
 4. Tagesübersicht der Kalorienzufuhr (User Story 4)
 
 Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen der App und priorisiert die Entwicklungsschritte.
+
+<hr>
+
+### 5. Backlog
+- die alle Points von **1. User Story**
+- die alle Points von **2. User Story**
+- die alle Points von **3. User Story**
+- die alle Points von **4. User Story**
+
+## optional
+- Die Mahlzeit wird korrekt im Tagesprotokoll gespeichert.
+
+
+## Story Points Tabelle 
+| User Story                                                                                      | Story Points |User Story|
+|-------------------------------------------------------------------------------------------------|--------------|--------|
+| Als Nutzer möchte ich meine täglichen Mahlzeiten eingeben, damit ich die aufgenommenen Kalorien verfolgen kann                   | 5            |    1    |
+| Als Nutzer möchte ich Nährwerte (wie Fett, Kohlenhydrate, Proteine) zu den Mahlzeiten hinzufügen, damit ich meine Ernährung besser überwachen kann.                | 13            |    2    |
+| Als Nutzer möchte ich meine Ernährungsziele (z. B. tägliche Kalorienmenge) festlegen, um meinen Fortschritt im Auge zu behalten.         | 8            |    3    |
+| Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen, um meinen Fortschritt nachverfolgen zu können        |      13       |    4    |
+
+
