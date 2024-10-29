@@ -1,11 +1,11 @@
 package main.java.kalorienzaehler.backend.entity;
 
 import java.lang.annotation.Inherited;
-
+import java.util.List;
+import java.util.ArrayList;
 import javax.annotation.processing.Generated;
 
 import jakarta.persistence.*;
-import javax.persistence.*;
 
 @Entity
 public class Meal {

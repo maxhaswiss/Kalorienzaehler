@@ -27,6 +27,29 @@ public class DailyGoal {
         this.totalCalories += calories;
     }
 
-    // Getter and Setter methods
-    // ...
+    public Long getGoalId() {
+        return goalId;
+    }
+
+    public void setGoalId(Long goalId) {
+        this.goalId = goalId;
+    }
+
+    public double getDailyCalorieGoal() {
+        return dailyCalorieGoal;
+    }
+
+    public void setDailyCalorieGoal(double dailyCalorieGoal) {
+        this.dailyCalorieGoal = dailyCalorieGoal;
+    }
+
+    public double getTotalCalories() {
+        return totalCalories;
+    }
+
+    public void setTotalCalories(double totalCalories) {
+        this.totalCalories = totalCalories;
+    }
+
+    
 }
