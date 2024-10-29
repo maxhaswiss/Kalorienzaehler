@@ -1,6 +1,6 @@
-package main.java.kalorienzaehler.backend.repository;
+package kalorienzaehler.backend.repository;
 
-import main.java.kalorienzaehler.backend.entity.DailyGoal;
+import kalorienzaehler.backend.entity.DailyGoal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

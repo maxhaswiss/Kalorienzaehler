@@ -1,4 +1,4 @@
-package main.java.kalorienzaehler.backend.entity;
+package kalorienzaehler.backend.entity;
 
 import java.lang.annotation.Inherited;
 import java.util.List;

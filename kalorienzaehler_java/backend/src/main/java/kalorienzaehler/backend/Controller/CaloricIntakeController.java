@@ -1,7 +1,7 @@
-package main.java.kalorienzaehler.backend.controller;
+package kalorienzaehler.backend.controller;
 
-import main.java.kalorienzaehler.backend.entity.CaloricIntake;
-import main.java.kalorienzaehler.backend.service.CaloricIntakeService;
+import kalorienzaehler.backend.entity.CaloricIntake;
+import kalorienzaehler.backend.service.CaloricIntakeService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
