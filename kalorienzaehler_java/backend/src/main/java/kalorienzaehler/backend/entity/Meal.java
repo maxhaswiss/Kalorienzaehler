@@ -1,11 +1,8 @@
 package main.java.kalorienzaehler.backend.entity;
 
-import java.lang.annotation.Inherited;
-import java.util.List;
-import java.util.ArrayList;
-import javax.annotation.processing.Generated;
-
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Meal {
@@ -14,6 +11,7 @@ public class Meal {
     private Long mealId;
     private String name;
     private double quantity;
+    private double calories;  // Hinzugefügt
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
@@ -40,9 +38,10 @@ public class Meal {
     }
 
     public double calculateCalories() {
-        return products.stream()
+        this.calories = products.stream()
                 .mapToDouble(product -> product.getCalories() * product.getQuantity())
                 .sum();
+        return this.calories;
     }
 
     // Getter und Setter
@@ -72,10 +71,6 @@ public class Meal {
 
     public double getCalories() {
         return calories;
-    }
-
-    public void setCalories(double calories) {
-        this.calories = calories;
     }
 
     public NutritionalInfo getNutritionalInfo() {
