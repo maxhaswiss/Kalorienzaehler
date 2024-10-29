@@ -1,6 +1,8 @@
 package main.java.kalorienzaehler.backend.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class NutritionalInfo {
@@ -20,6 +22,38 @@ public class NutritionalInfo {
         this.proteins = products.stream().mapToDouble(Product::getProteins).sum();
     }
 
-    // Getter and Setter methods
-    // ...
+    public Long getNutritionalInfoId() {
+        return nutritionalInfoId;
+    }
+
+    public void setNutritionalInfoId(Long nutritionalInfoId) {
+        this.nutritionalInfoId = nutritionalInfoId;
+    }
+
+    public double getFat() {
+        return fat;
+    }
+
+    public void setFat(double fat) {
+        this.fat = fat;
+    }
+
+    public double getCarbohydrates() {
+        return carbohydrates;
+    }
+
+    public void setCarbohydrates(double carbohydrates) {
+        this.carbohydrates = carbohydrates;
+    }
+
+    public double getProteins() {
+        return proteins;
+    }
+
+    public void setProteins(double proteins) {
+        this.proteins = proteins;
+    }
+
+    
+    
 }
