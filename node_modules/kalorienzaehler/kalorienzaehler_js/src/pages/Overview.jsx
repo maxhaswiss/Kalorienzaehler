@@ -31,14 +31,21 @@ export default function Overview() {
         <tbody>
           { meals.map(m => <tr key={ m.id }>
             <td>
+              (m.content.meal)
             </td>
             <td>
+              (m.content.foodName)
             </td>
             <td>
+              (m.content.amount)
             </td>
             <td>
+              <span>pro 100g</span>
+              {"Kalorien insgesamt: " + (m.content.amount * m.content.calories).toFixed(1)}
+              <span>pro 100g</span>AMOUNT*CALORIES
             </td>
             <td>
+              (m.content.nutrition)
               <td>Fett: </td>
               <td>Kohlenhydrate: </td>
               <td>Proteine: </td>
