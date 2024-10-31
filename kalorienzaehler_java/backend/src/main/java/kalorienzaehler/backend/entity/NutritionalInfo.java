@@ -12,7 +12,6 @@ public class NutritionalInfo {
     private double fat;
     private double carbohydrates;
     private double proteins;
-
     public NutritionalInfo() {
     }
 

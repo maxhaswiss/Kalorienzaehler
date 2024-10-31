@@ -1,6 +1,5 @@
 package kalorienzaehler.backend.entity;
 
-
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -21,13 +20,19 @@ public class CaloricIntake {
         this.date = LocalDate.now();
     }
 
+    // Methode zum Hinzufügen einer Mahlzeit und Aktualisieren der Kalorien
     public void addMeal(Meal meal) {
         meals.add(meal);
-        totalCalories += meal.calculateCalories();
+        totalCalories += meal.getProducts().stream()
+                             .mapToDouble(Product::calculateCalories)
+                             .sum();
     }
 
     public double calculateTotalCalories() {
-        return meals.stream().mapToDouble(Meal::calculateCalories).sum();
+        return meals.stream()
+                    .flatMap(meal -> meal.getProducts().stream())
+                    .mapToDouble(Product::calculateCalories)
+                    .sum();
     }
 
     public void resetDailyIntake() {
@@ -66,6 +71,4 @@ public class CaloricIntake {
     public void setMeals(List<Meal> meals) {
         this.meals = meals;
     }
-
-    
 }
