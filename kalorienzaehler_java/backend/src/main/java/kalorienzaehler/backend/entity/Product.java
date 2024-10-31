@@ -8,11 +8,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
     private String name;
-    private double calories;    // Hinzugefügt
-    private double quantity;    // Hinzugefügt
-    private double fat;         // Hinzugefügt
-    private double carbohydrates; // Hinzugefügt
-    private double proteins;    // Hinzugefügt
+    private double calories;    
+    private double quantity;    
+    private double fat;         
+    private double carbohydrates; 
+    private double proteins;    
 
     public Product() {
     }
@@ -24,9 +24,15 @@ public class Product {
         this.fat = fat;
         this.carbohydrates = carbohydrates;
         this.proteins = proteins;
+        calculateCalories(); 
     }
 
-    // Getter und Setter für alle Felder
+    public double calculateCalories() {
+        this.calories = (this.proteins * 4) + (this.carbohydrates * 4) + (this.fat * 9);
+        return this.calories;
+    }
+    
+
     public Long getProductId() {
         return productId;
     }
@@ -43,7 +49,7 @@ public class Product {
         this.name = name;
     }
 
-    public double getCalories() { // Hinzugefügt
+    public double getCalories() { 
         return calories;
     }
 
@@ -51,7 +57,7 @@ public class Product {
         this.calories = calories;
     }
 
-    public double getQuantity() { // Hinzugefügt
+    public double getQuantity() { 
         return quantity;
     }
 
@@ -59,27 +65,30 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public double getFat() { // Hinzugefügt
+    public double getFat() { 
         return fat;
     }
 
     public void setFat(double fat) {
         this.fat = fat;
+        calculateCalories();
     }
 
-    public double getCarbohydrates() { // Hinzugefügt
+    public double getCarbohydrates() { 
         return carbohydrates;
     }
 
     public void setCarbohydrates(double carbohydrates) {
         this.carbohydrates = carbohydrates;
+        calculateCalories();
     }
 
-    public double getProteins() { // Hinzugefügt
+    public double getProteins() {
         return proteins;
     }
 
     public void setProteins(double proteins) {
         this.proteins = proteins;
+        calculateCalories();
     }
 }
