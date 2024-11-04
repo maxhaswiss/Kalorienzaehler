@@ -115,4 +115,11 @@ public class ApiController {
         caloricIntakeService.deleteCaloricIntake(id);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/meals")
+    public ResponseEntity<Void> deleteAllMeals() {
+    mealService.deleteAllMeals(); // Implement logic to delete all meals
+    return ResponseEntity.noContent().build();
+}
+
 }

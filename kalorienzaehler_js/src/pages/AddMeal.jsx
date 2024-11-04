@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function AddMeal() {
   const [entries, setEntries] = useState({
@@ -6,8 +6,11 @@ export default function AddMeal() {
     quantity: 1,
     products: [],
     productName: '',
-    productQuantity: 0,
-    productCalories: 0,
+    productQuantity: '',
+    productCalories: '',
+    productFat: '',
+    productCarbohydrates: '',
+    productProteins: '',
   });
 
   const store = (e) => {
@@ -19,31 +22,43 @@ export default function AddMeal() {
   };
 
   const addProduct = () => {
+    if (entries.productName === '' || entries.productQuantity <= 0 || entries.productCalories <= 0) {
+      alert("Produktname, Menge, und Kalorien sind erforderlich, um ein Produkt hinzuzufügen!");
+      return;
+    }
+
     const product = {
       name: entries.productName,
-      quantity: parseFloat(entries.productQuantity),
-      calories: parseFloat(entries.productCalories),
+      quantity: parseFloat(entries.productQuantity) || 0,
+      calories: parseFloat(entries.productCalories) || 0,
+      fat: parseFloat(entries.productFat) || 0,
+      carbohydrates: parseFloat(entries.productCarbohydrates) || 0,
+      proteins: parseFloat(entries.productProteins) || 0,
     };
+
     setEntries({
       ...entries,
       products: [...entries.products, product],
       productName: '',
-      productQuantity: 0,
-      productCalories: 0,
+      productQuantity: '',
+      productCalories: '',
+      productFat: '',
+      productCarbohydrates: '',
+      productProteins: '',
     });
   };
 
   const submit = (e) => {
     e.preventDefault();
 
-    if (entries.mealName === '' || entries.products.length === 0) {
-      alert("Input is missing or invalid!");
+    if (entries.products.length === 0) {
+      alert("Bitte fügen Sie mindestens ein Produkt zur Mahlzeit hinzu!");
       return;
     }
 
     const submitData = {
       name: entries.mealName,
-      quantity: parseFloat(entries.quantity),
+      quantity: parseFloat(entries.quantity) || 1,
       products: entries.products,
     };
 
@@ -56,23 +71,26 @@ export default function AddMeal() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Error creating meal");
+          throw new Error("Fehler beim Erstellen der Mahlzeit");
         }
         return response.json();
       })
       .then((data) => {
-        console.log("Meal created successfully:", data);
+        console.log("Mahlzeit erfolgreich erstellt:", data);
         setEntries({
           mealName: '',
           quantity: 1,
           products: [],
           productName: '',
-          productQuantity: 0,
-          productCalories: 0,
+          productQuantity: '',
+          productCalories: '',
+          productFat: '',
+          productCarbohydrates: '',
+          productProteins: '',
         });
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Fehler:", error);
       });
   };
 
@@ -91,7 +109,6 @@ export default function AddMeal() {
               maxLength="60"
               value={entries.mealName}
               onChange={store}
-              required
             />
           </fieldset>
         </div>
@@ -107,7 +124,6 @@ export default function AddMeal() {
               max="10"
               value={entries.quantity}
               onChange={store}
-              required
             />
           </fieldset>
         </div>
@@ -122,7 +138,6 @@ export default function AddMeal() {
               maxLength="60"
               value={entries.productName}
               onChange={store}
-              required
             />
           </fieldset>
         </div>
@@ -134,11 +149,10 @@ export default function AddMeal() {
               className="number-input"
               type="number"
               name="productQuantity"
-              min="1"
+              min="0"
               max="1000"
               value={entries.productQuantity}
               onChange={store}
-              required
             />
           </fieldset>
         </div>
@@ -150,11 +164,55 @@ export default function AddMeal() {
               className="number-input"
               type="number"
               name="productCalories"
-              min="1"
+              min="0"
               max="10000"
               value={entries.productCalories}
               onChange={store}
-              required
+            />
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Fett pro 100g (g):</legend>
+            <input
+              className="number-input"
+              type="number"
+              name="productFat"
+              min="0"
+              max="100"
+              value={entries.productFat}
+              onChange={store}
+            />
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Kohlenhydrate pro 100g (g):</legend>
+            <input
+              className="number-input"
+              type="number"
+              name="productCarbohydrates"
+              min="0"
+              max="100"
+              value={entries.productCarbohydrates}
+              onChange={store}
+            />
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend>Proteine pro 100g (g):</legend>
+            <input
+              className="number-input"
+              type="number"
+              name="productProteins"
+              min="0"
+              max="100"
+              value={entries.productProteins}
+              onChange={store}
             />
           </fieldset>
         </div>
@@ -168,7 +226,8 @@ export default function AddMeal() {
           <ul>
             {entries.products.map((product, index) => (
               <li key={index}>
-                {product.name}, {product.quantity}g, {product.calories}kcal
+                {product.name}, {product.quantity}g, {product.calories} kcal,
+                Fett: {product.fat}g, Kohlenhydrate: {product.carbohydrates}g, Proteine: {product.proteins}g
               </li>
             ))}
           </ul>
@@ -187,8 +246,11 @@ export default function AddMeal() {
               quantity: 1,
               products: [],
               productName: '',
-              productQuantity: 0,
-              productCalories: 0,
+              productQuantity: '',
+              productCalories: '',
+              productFat: '',
+              productCarbohydrates: '',
+              productProteins: '',
             })
           }
         >

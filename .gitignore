@@ -36,3 +36,5 @@
 ehthumbs.db
 Thumbs.db
 application.propeties
+# Node.js
+node_modules/
