@@ -1,7 +1,7 @@
-package kalorienzaehler.backend.service;
+package main.java.kalorienzaehler.backend.service;
 
-import kalorienzaehler.backend.entity.Meal;
-import kalorienzaehler.backend.repository.MealRepository;
+import main.java.kalorienzaehler.backend.entity.Meal;
+import main.java.kalorienzaehler.backend.repository.MealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +23,7 @@ public class MealService {
     public Meal getMealById(Long id) {
         return mealRepository.findById(id).orElse(null);
     }
-    public Meal updateMeal(Long id, Meal meal) {
-        meal.setMealId(id);
-        return mealRepository.save(meal);
-    }
+
     public void deleteMeal(Long id) {
         mealRepository.deleteById(id);
     }

@@ -1,8 +1,11 @@
-package kalorienzaehler.backend.entity;
+package main.java.kalorienzaehler.backend.entity;
+
+import java.lang.annotation.Inherited;
+
+import javax.annotation.processing.Generated;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
 
 @Entity
 public class Meal {
@@ -11,7 +14,6 @@ public class Meal {
     private Long mealId;
     private String name;
     private double quantity;
-    private double calories;  
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
@@ -29,31 +31,18 @@ public class Meal {
     }
 
     public void addProduct(Product product) {
-        
-        if (product.getCalories() == 0) {
-            product.calculateCalories();
-        }
-        
         products.add(product);
-        calculateMealStats();
+        calculateMealStats();  // Update nutritional info whenever a product is added
     }
-    
 
     public void calculateMealStats() {
         nutritionalInfo.calculateTotalNutrients(products);
-    
-        System.out.println("Produkte: " + products);
-        System.out.println("Berechnung der Kalorien für jedes Produkt:");
-    
-        this.calories = products.stream()
-                .mapToDouble(product -> {
-                    double calories = product.getCalories() * (product.getQuantity() / 100);
-                    System.out.println("Produkt: " + product.getName() + ", Kalorien: " + calories);
-                    return calories;
-                })
-                .sum() * this.quantity;
-    
-        System.out.println("Gesamte Kalorien: " + this.calories);
+    }
+
+    public double calculateCalories() {
+        return products.stream()
+                .mapToDouble(product -> product.getCalories() * product.getQuantity())
+                .sum();
     }
 
     // Getter und Setter
@@ -85,8 +74,8 @@ public class Meal {
         return calories;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public void setCalories(double calories) {
+        this.calories = calories;
     }
 
     public NutritionalInfo getNutritionalInfo() {
