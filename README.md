@@ -124,6 +124,12 @@ Wir schaffen heute die [User Story 1](#1-user-story) fertig mit Dokumentation un
 | 2      | Jede Mahlzeit hat mindestens einen Namen und die Menge    | TestID 1<br>constraints funktionieren in SQL. Übersicht von Mahlzeiten            | 1. Auf Website gehen<br>2. Name und ergebnis leerlassen und abschicken | Error message: Man kann keine Mahlzeiten ohne Namen oder Menge eingeben |
 | 3      | Die Kalorienzahl wird Automatisch berechnet je nach menge | TestID 1<br>TestID 2<br>Umrechnung funktioniert                                   | 1. Auf Website gehen<br>2. Mahlzeit Hinzufügen<br>                     | Kalorien sind richtig und automatisch berechnet                         |
 
+
+## Sprint Backlog 4.11.2024
+Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-story) fertig mit Dokumentation und Testing 
+**Max** Frontend und backend
+**Mykhaylo** Frontend und backend
+
 ### Testplan User Story 2 04.10.2024
 
 | TestID | Testname                                                        | Anforderungen                                                                                                                                                   | Testprozess                                                                                                                                             | Erwartetes Ergebnis                                                                                                            |
@@ -134,7 +140,3 @@ Wir schaffen heute die [User Story 1](#1-user-story) fertig mit Dokumentation un
 | 4      | Tägliche Gesamtwerte aktualisieren                               | Tägliche Gesamtwerte für Fett, Kohlenhydrate und Proteine aktualisieren sich automatisch nach Hinzufügen oder Ändern einer Mahlzeit                            | 1. Auf Website gehen<br>2. Mehrere Mahlzeiten mit unterschiedlichen Nährwerten hinzufügen<br>3. Zusammenfassung für den Tag überprüfen                 | Die täglichen Gesamtwerte für Fett, Kohlenhydrate und Proteine werden korrekt und automatisch aktualisiert.                    |
 
 
-## Sprint Backlog 4.11.2024
-Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-story) fertig mit Dokumentation und Testing 
-**Max** Frontend und backend
-**Mykhaylo** Frontend und backend
