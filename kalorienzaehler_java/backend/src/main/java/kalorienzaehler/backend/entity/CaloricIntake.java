@@ -12,7 +12,7 @@ public class CaloricIntake {
     private Long intakeId;
     private LocalDate date;
     private double totalCalories;
-
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Meal> meals = new ArrayList<>();
 
