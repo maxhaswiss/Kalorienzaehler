@@ -129,12 +129,17 @@ Wir schaffen heute die User Story 1 fertig mit Dokumentation und Testing
 | 2      | Jede Mahlzeit hat mindestens einen Namen und die Menge    | TestID 1<br>constraints funktionieren in SQL. Übersicht von Mahlzeiten            | 1. Auf Website gehen<br>2. Name und ergebnis leerlassen und abschicken | Error message: Man kann keine Mahlzeiten ohne Namen oder Menge eingeben |
 | 3      | Die Kalorienzahl wird Automatisch berechnet je nach menge | TestID 1<br>TestID 2<br>Umrechnung funktioniert                                   | 1. Auf Website gehen<br>2. Mahlzeit Hinzufügen<br>                     | Kalorien sind richtig und automatisch berechnet                         |
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
 
+>>>>>>> 667621b7145f094d3232ee0f8b84fc7a31d803a7
 ## Sprint Backlog 4.11.2024
 Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-story) fertig mit Dokumentation und Testing 
 **Max** Frontend und backend
 **Mykhaylo** Frontend und backend
+<<<<<<< HEAD
+=======
 
 ### Testplan User Story 2 04.10.2024
 
@@ -148,3 +153,4 @@ Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-stor
 
 =======
 >>>>>>> parent of 3ce2b08 (Merge remote-tracking branch 'origin/main')
+>>>>>>> 667621b7145f094d3232ee0f8b84fc7a31d803a7
