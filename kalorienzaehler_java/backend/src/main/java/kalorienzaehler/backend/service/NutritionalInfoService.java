@@ -1,7 +1,7 @@
-package kalorienzaehler.backend.service;
+package main.java.kalorienzaehler.backend.service;
 
-import kalorienzaehler.backend.entity.NutritionalInfo;
-import kalorienzaehler.backend.repository.NutritionalInfoRepository;
+import main.java.kalorienzaehler.backend.NutritionalInfo;
+import main.java.kalorienzaehler.backend.NutritionalInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
