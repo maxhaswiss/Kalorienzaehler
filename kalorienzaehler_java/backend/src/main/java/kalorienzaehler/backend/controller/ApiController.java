@@ -115,7 +115,6 @@ public class ApiController {
         caloricIntakeService.deleteCaloricIntake(id);
         return ResponseEntity.noContent().build();
     }
-<<<<<<< HEAD
 
     @DeleteMapping("/meals")
     public ResponseEntity<Void> deleteAllMeals() {
@@ -123,6 +122,4 @@ public class ApiController {
     return ResponseEntity.noContent().build();
 }
 
-=======
->>>>>>> parent of 3ce2b08 (Merge remote-tracking branch 'origin/main')
 }
