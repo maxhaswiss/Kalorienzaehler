@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 
 export default function Tracker() {
@@ -213,4 +214,20 @@ export default function Tracker() {
       `}</style>
     </>
   );
+=======
+export default function Tracker() {
+
+  return(
+    <>
+    <h1>Willkommen zum Kalorientracker / Fortschritt</h1>
+    <div>
+      <hr />
+      <p>
+        Fortschrittsbalken
+      </p>
+      <hr />
+    </div>
+    </>
+  )
+>>>>>>> parent of 3ce2b08 (Merge remote-tracking branch 'origin/main')
 }

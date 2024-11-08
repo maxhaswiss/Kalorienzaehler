@@ -109,8 +109,13 @@ Dieser Product Backlog gibt einen Überblick über die wichtigsten Funktionen de
 | Als Nutzer möchte ich meine Ernährungsziele (z. B. tägliche Kalorienmenge) festlegen, um meinen Fortschritt im Auge zu behalten.         | 8            |    3    |
 | Als Nutzer möchte ich meine tägliche Kalorienzufuhr in einer Übersicht sehen, um meinen Fortschritt nachverfolgen zu können        |      13       |    4    |
 
+<<<<<<< HEAD
 ## Sprint Backlog 28.10.2024
 Wir schaffen heute die [User Story 1](#1-user-story) fertig mit Dokumentation und Testing 
+=======
+## Sprint Goal 28.10.2024
+Wir schaffen heute die User Story 1 fertig mit Dokumentation und Testing 
+>>>>>>> parent of 3ce2b08 (Merge remote-tracking branch 'origin/main')
 
 **Jan** Frontend <br>
 **Mykhaylo** Backend <br>
@@ -123,6 +128,7 @@ Wir schaffen heute die [User Story 1](#1-user-story) fertig mit Dokumentation un
 | 1      | man kann eine Mahlzeit hinzufügen                         | Mahlzeit ist eine Tabelle in SQL,<br>SQL läuft<br>Frontend hat ein Eingabefenster | 1. auf Website gehen<br>2. Mahlzeit eintragen                          | Mahlzeit wird erfolgreich gespeichert                                   |
 | 2      | Jede Mahlzeit hat mindestens einen Namen und die Menge    | TestID 1<br>constraints funktionieren in SQL. Übersicht von Mahlzeiten            | 1. Auf Website gehen<br>2. Name und ergebnis leerlassen und abschicken | Error message: Man kann keine Mahlzeiten ohne Namen oder Menge eingeben |
 | 3      | Die Kalorienzahl wird Automatisch berechnet je nach menge | TestID 1<br>TestID 2<br>Umrechnung funktioniert                                   | 1. Auf Website gehen<br>2. Mahlzeit Hinzufügen<br>                     | Kalorien sind richtig und automatisch berechnet                         |
+<<<<<<< HEAD
 
 
 ## Sprint Backlog 4.11.2024
@@ -140,3 +146,5 @@ Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-stor
 | 4      | Tägliche Gesamtwerte aktualisieren                               | Tägliche Gesamtwerte für Fett, Kohlenhydrate und Proteine aktualisieren sich automatisch nach Hinzufügen oder Ändern einer Mahlzeit                            | 1. Auf Website gehen<br>2. Mehrere Mahlzeiten mit unterschiedlichen Nährwerten hinzufügen<br>3. Zusammenfassung für den Tag überprüfen                 | Die täglichen Gesamtwerte für Fett, Kohlenhydrate und Proteine werden korrekt und automatisch aktualisiert.                    |
 
 
+=======
+>>>>>>> parent of 3ce2b08 (Merge remote-tracking branch 'origin/main')
