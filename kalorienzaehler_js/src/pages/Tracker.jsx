@@ -8,7 +8,7 @@ export default function Tracker() {
     totalCarbohydrates: 0,
     totalProteins: 0,
   });
-  const dailyCalorieGoal = 2500;
+  const [dailyCalorieGoal, setDailyCalorieGoal] = useState(2500);
 
   // Check if a new day has started and reset if needed
   const checkAndResetForNewDay = () => {
@@ -16,6 +16,17 @@ export default function Tracker() {
     const today = new Date().toISOString().split("T")[0];
 
     if (lastUpdatedDate !== today) {
+      // Prompt the user for a new daily calorie goal
+      const userCalorieGoal = parseInt(prompt("Bitte geben Sie Ihr tägliches Kalorienziel ein:", "2500"), 10);
+      if (isNaN(userCalorieGoal) || userCalorieGoal <= 0) {
+        alert("Ungültiges Kalorienziel. Standardwert von 2500 wird verwendet.");
+        setDailyCalorieGoal(2500);
+        localStorage.setItem("dailyCalorieGoal", 2500);
+      } else {
+        setDailyCalorieGoal(userCalorieGoal);
+        localStorage.setItem("dailyCalorieGoal", userCalorieGoal);
+      }
+
       // Reset totals and delete all meals for a new day
       deleteAllMeals();
       setMeals([]);
@@ -37,14 +48,19 @@ export default function Tracker() {
       );
       localStorage.removeItem("meals"); // Clear meals from local storage for the new day
     } else {
-      // Load totals and meals from localStorage
+      // Load totals, meals, and calorie goal from localStorage
       const storedTotals = JSON.parse(localStorage.getItem("totals"));
       const storedMeals = JSON.parse(localStorage.getItem("meals"));
+      const storedCalorieGoal = parseInt(localStorage.getItem("dailyCalorieGoal"), 10);
+
       if (storedTotals) {
         setTotals(storedTotals);
       }
       if (storedMeals) {
         setMeals(storedMeals);
+      }
+      if (storedCalorieGoal) {
+        setDailyCalorieGoal(storedCalorieGoal);
       }
     }
   };
