@@ -38,3 +38,5 @@ Thumbs.db
 application.propeties
 # Node.js
 node_modules/
+# package lock
+node_modules/.package-lock.json
