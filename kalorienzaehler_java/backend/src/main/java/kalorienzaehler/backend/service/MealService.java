@@ -23,13 +23,16 @@ public class MealService {
     public Meal getMealById(Long id) {
         return mealRepository.findById(id).orElse(null);
     }
+
     public Meal updateMeal(Long id, Meal meal) {
         meal.setMealId(id);
         return mealRepository.save(meal);
     }
+
     public void deleteMeal(Long id) {
         mealRepository.deleteById(id);
     }
+
     public void deleteAllMeals() {
         mealRepository.deleteAll();
     }    
