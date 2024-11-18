@@ -1,18 +1,24 @@
 import { useState } from 'react';
 
+/**
+ * Die AddMeal-Komponente ermöglicht es Benutzern, eine neue Mahlzeit zu erstellen, 
+ * indem sie Produkte hinzufügen und die Gesamtkalorien berechnen.
+ */
 export default function AddMeal() {
+  // Verwaltet den Zustand aller Eingaben und der Liste der Produkte.
   const [entries, setEntries] = useState({
-    mealName: '',
-    quantity: 1,
-    products: [],
-    productName: '',
-    productQuantity: '',
-    productCalories: '',
-    productFat: '',
-    productCarbohydrates: '',
-    productProteins: '',
+    mealName: '', // Name der Mahlzeit.
+    quantity: 1, // Mengenfaktor der Mahlzeit (z. B. 2x Frühstück).
+    products: [], // Liste der Produkte, die Teil der Mahlzeit sind.
+    productName: '', // Temporärer Name eines Produkts.
+    productQuantity: '', // Temporäre Menge eines Produkts (in Gramm).
+    productCalories: '', // Temporäre Kalorienangabe pro 100g für ein Produkt.
+    productFat: '', // Temporärer Fettgehalt pro 100g eines Produkts.
+    productCarbohydrates: '', // Temporärer Kohlenhydratgehalt pro 100g eines Produkts.
+    productProteins: '', // Temporärer Proteingehalt pro 100g eines Produkts.
   });
 
+  // Speichert die Änderungen der Eingaben im Zustand.
   const store = (e) => {
     const { name, value } = e.target;
     setEntries({
@@ -21,6 +27,10 @@ export default function AddMeal() {
     });
   };
 
+  /**
+   * Fügt ein Produkt zur Liste hinzu und setzt die Eingabefelder zurück.
+   * Überprüft, ob wichtige Felder (Name, Menge, Kalorien) ausgefüllt sind.
+   */
   const addProduct = () => {
     if (entries.productName === '' || entries.productQuantity <= 0 || entries.productCalories <= 0) {
       alert("Produktname, Menge, und Kalorien sind erforderlich, um ein Produkt hinzuzufügen!");
@@ -48,6 +58,10 @@ export default function AddMeal() {
     });
   };
 
+  /**
+   * Sendet die Mahlzeit an den Server.
+   * Überprüft, ob mindestens ein Produkt hinzugefügt wurde, bevor die Daten gesendet werden.
+   */
   const submit = (e) => {
     e.preventDefault();
 
@@ -99,161 +113,117 @@ export default function AddMeal() {
       <h1>Mahlzeit hinzufügen</h1>
       <hr />
       <form onSubmit={submit}>
-        <div>
-          <fieldset>
-            <legend>Mahlzeit Name:</legend>
-            <input
-              type="text"
-              name="mealName"
-              minLength="2"
-              maxLength="60"
-              value={entries.mealName}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
+        {/* Eingabe für den Namen der Mahlzeit */}
+        <fieldset>
+          <legend>Mahlzeit Name:</legend>
+          <input
+            type="text"
+            name="mealName"
+            minLength="2"
+            maxLength="60"
+            value={entries.mealName}
+            onChange={store}
+          />
+        </fieldset>
 
-        <div>
-          <fieldset>
-            <legend>Mahlzeit Menge (Faktor):</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="quantity"
-              min="1"
-              max="10"
-              value={entries.quantity}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
+        {/* Eingabe für die Mengenangabe der Mahlzeit */}
+        <fieldset>
+          <legend>Mahlzeit Menge (Faktor):</legend>
+          <input
+            type="number"
+            name="quantity"
+            min="1"
+            max="10"
+            value={entries.quantity}
+            onChange={store}
+          />
+        </fieldset>
 
-        <div>
-          <fieldset>
-            <legend>Produktname:</legend>
-            <input
-              type="text"
-              name="productName"
-              minLength="2"
-              maxLength="60"
-              value={entries.productName}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Produkt Menge (g):</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="productQuantity"
-              min="0"
-              max="1000"
-              value={entries.productQuantity}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Kalorien pro 100g:</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="productCalories"
-              min="0"
-              max="10000"
-              value={entries.productCalories}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Fett pro 100g (g):</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="productFat"
-              min="0"
-              max="100"
-              value={entries.productFat}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Kohlenhydrate pro 100g (g):</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="productCarbohydrates"
-              min="0"
-              max="100"
-              value={entries.productCarbohydrates}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Proteine pro 100g (g):</legend>
-            <input
-              className="number-input"
-              type="number"
-              name="productProteins"
-              min="0"
-              max="100"
-              value={entries.productProteins}
-              onChange={store}
-            />
-          </fieldset>
-        </div>
+        {/* Eingaben für Produkte */}
+        <fieldset>
+          <legend>Produktname:</legend>
+          <input
+            type="text"
+            name="productName"
+            value={entries.productName}
+            onChange={store}
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Produkt Menge (g):</legend>
+          <input
+            type="number"
+            name="productQuantity"
+            min="0"
+            max="1000"
+            value={entries.productQuantity}
+            onChange={store}
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Kalorien pro 100g:</legend>
+          <input
+            type="number"
+            name="productCalories"
+            min="0"
+            max="10000"
+            value={entries.productCalories}
+            onChange={store}
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Fett, Kohlenhydrate, Proteine (pro 100g):</legend>
+          <input
+            type="number"
+            name="productFat"
+            placeholder="Fett"
+            value={entries.productFat}
+            onChange={store}
+          />
+          <input
+            type="number"
+            name="productCarbohydrates"
+            placeholder="Kohlenhydrate"
+            value={entries.productCarbohydrates}
+            onChange={store}
+          />
+          <input
+            type="number"
+            name="productProteins"
+            placeholder="Proteine"
+            value={entries.productProteins}
+            onChange={store}
+          />
+        </fieldset>
 
         <button type="button" onClick={addProduct}>
           Produkt hinzufügen
         </button>
 
-        <div>
-          <h3>Produkte in der Mahlzeit:</h3>
-          <ul>
-            {entries.products.map((product, index) => (
-              <li key={index}>
-                {product.name}, {product.quantity}g, {product.calories} kcal,
-                Fett: {product.fat}g, Kohlenhydrate: {product.carbohydrates}g, Proteine: {product.proteins}g
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Anzeige der hinzugefügten Produkte */}
+        <h3>Produkte in der Mahlzeit:</h3>
+        <ul>
+          {entries.products.map((product, index) => (
+            <li key={index}>
+              {product.name}, {product.quantity}g, {product.calories} kcal,
+              Fett: {product.fat}g, Kohlenhydrate: {product.carbohydrates}g, Proteine: {product.proteins}g
+            </li>
+          ))}
+        </ul>
 
-        <hr />
-        <button className="input-button" type="submit">
-          Speichern
-        </button>
-        <button
-          className="input-button"
-          type="reset"
-          onClick={() =>
-            setEntries({
-              mealName: '',
-              quantity: 1,
-              products: [],
-              productName: '',
-              productQuantity: '',
-              productCalories: '',
-              productFat: '',
-              productCarbohydrates: '',
-              productProteins: '',
-            })
-          }
-        >
+        {/* Buttons zum Speichern oder Zurücksetzen */}
+        <button type="submit">Speichern</button>
+        <button type="reset" onClick={() => setEntries({
+          mealName: '',
+          quantity: 1,
+          products: [],
+          productName: '',
+          productQuantity: '',
+          productCalories: '',
+          productFat: '',
+          productCarbohydrates: '',
+          productProteins: '',
+        })}>
           Zurücksetzen
         </button>
       </form>
