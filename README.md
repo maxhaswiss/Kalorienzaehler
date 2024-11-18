@@ -140,3 +140,11 @@ Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-stor
 | 4      | Tägliche Gesamtwerte aktualisieren                               | Tägliche Gesamtwerte für Fett, Kohlenhydrate und Proteine aktualisieren sich automatisch nach Hinzufügen oder Ändern einer Mahlzeit                            | 1. Auf Website gehen<br>2. Mehrere Mahlzeiten mit unterschiedlichen Nährwerten hinzufügen<br>3. Zusammenfassung für den Tag überprüfen                 | Die täglichen Gesamtwerte für Fett, Kohlenhydrate und Proteine werden korrekt und automatisch aktualisiert.                    |
 
 
+### Release
+Die letzte noch nicht beendete Aufgabe ist das Anpassen der Kalorienberechnung für den Tag. Diese Aufgabe ist noch aus User Story 2.
+Sobald die Aufgabe fertig ist wären wir bereit für den Release.
+
+Release Datum: 19.11.2024
+Planungs Velocity: 9 Storypunkte
+Themen: Story 2 beenden
+
