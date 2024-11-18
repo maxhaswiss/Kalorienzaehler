@@ -141,10 +141,10 @@ Wir machen die [User Story 1](#1-user-story) und die [User Story 2](#2-user-stor
 
 
 ### Release
-Die letzte noch nicht beendete Aufgabe ist das Anpassen der Kalorienberechnung für den Tag. Diese Aufgabe ist noch aus User Story 2.
+Die letzte noch nicht beendete Aufgabe ist das Anpassen der Kalorienberechnung für den Tag. Diese Aufgabe ist noch aus User Story 2. <br>
 Sobald die Aufgabe fertig ist wären wir bereit für den Release.
 
-Release Datum: 19.11.2024
-Planungs Velocity: 9 Storypunkte
-Themen: Story 2 beenden
+Release Datum: 19.11.2024 <br>
+Planungs Velocity: 9 Storypunkte <br>
+Themen: Story 2 beenden <br>
 
