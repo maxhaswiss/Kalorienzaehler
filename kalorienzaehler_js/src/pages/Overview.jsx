@@ -1,20 +1,31 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
+/**
+ * Die Overview-Komponente zeigt eine Übersicht aller Mahlzeiten und ihrer zugehörigen Produkte.
+ * 
+ * Die Daten werden aus einer API geladen und in einer tabellarischen Ansicht dargestellt.
+ */
 export default function Overview() {
+  const [meals, setMeals] = useState([]); // Zustand für die gespeicherten Mahlzeiten.
 
-  const [meals, setMeals] = useState([])
-
+  /**
+   * Lädt die Mahlzeiten-Daten aus der API, sobald die Komponente gerendert wird.
+   */
   useEffect(() => {
-    fetch("http://localhost:8080/api/meals")
-      .then(r => r.json())
-      .then(qs => {
-        setMeals(qs);
+    fetch("http://localhost:8080/api/meals") // Abruf der Mahlzeiten-Daten von der API.
+      .then((r) => r.json()) // Konvertiert die Antwort in JSON.
+      .then((qs) => {
+        setMeals(qs); // Speichert die Mahlzeiten im Zustand.
       })
-      .catch(error => {
-        console.error("Error fetching meals:", error);
+      .catch((error) => {
+        console.error("Error fetching meals:", error); // Gibt Fehler in der Konsole aus.
       });
-  }, [])
+  }, []); // Der leere Array stellt sicher, dass die Anfrage nur einmal beim Laden der Komponente ausgeführt wird.
 
+  /**
+   * Darstellung der Komponente.
+   * Zeigt die Mahlzeiten-Daten in einer Tabelle mit Spalten für Name, Produkte, Mengen und Nährwerte.
+   */
   return (
     <>
       <h1>Übersicht Mahlzeiten</h1>
@@ -36,16 +47,19 @@ export default function Overview() {
             {meals.map((meal) => (
               <tr key={meal.mealId}>
                 <td>{meal.name}</td>
+                {/* Produkte der Mahlzeit */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>{product.name}</div>
                   ))}
                 </td>
+                {/* Mengen der Produkte */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>{product.quantity}</div>
                   ))}
                 </td>
+                {/* Kalorien berechnet anhand der Menge */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>
@@ -53,16 +67,19 @@ export default function Overview() {
                     </div>
                   ))}
                 </td>
+                {/* Fettgehalt */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>{product.fat.toFixed(1)}</div>
                   ))}
                 </td>
+                {/* Kohlenhydrate */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>{product.carbohydrates.toFixed(1)}</div>
                   ))}
                 </td>
+                {/* Proteine */}
                 <td>
                   {meal.products.map((product, index) => (
                     <div key={index}>{product.proteins.toFixed(1)}</div>
@@ -76,5 +93,5 @@ export default function Overview() {
       <hr />
       <br />
     </>
-  )
+  );
 }

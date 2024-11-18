@@ -1,23 +1,33 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Die Tracker-Komponente überwacht die täglichen Kalorien, Fette, Kohlenhydrate und Proteine,
+ * basierend auf den Mahlzeiten eines Benutzers. Sie bietet die Möglichkeit, tägliche Werte zu speichern,
+ * einen neuen Tag zu starten und die aktuellen Fortschritte zu verfolgen.
+ */
 export default function Tracker() {
-  const [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([]); // Zustand für die Mahlzeiten
   const [totals, setTotals] = useState({
     totalCalories: 0,
     totalFat: 0,
     totalCarbohydrates: 0,
     totalProteins: 0,
-  });
-  const [dailyCalorieGoal, setDailyCalorieGoal] = useState(2500);
+  }); // Zustand für die Gesamtnährwerte
+  const [dailyCalorieGoal, setDailyCalorieGoal] = useState(2500); // Standard-Kalorienziel
 
-  // Check if a new day has started and reset if needed
+  /**
+   * Prüft, ob ein neuer Tag begonnen hat, und setzt die Tageswerte bei Bedarf zurück.
+   */
   const checkAndResetForNewDay = () => {
     const lastUpdatedDate = localStorage.getItem("lastUpdatedDate");
     const today = new Date().toISOString().split("T")[0];
 
     if (lastUpdatedDate !== today) {
-      // Prompt the user for a new daily calorie goal
-      const userCalorieGoal = parseInt(prompt("Bitte geben Sie Ihr tägliches Kalorienziel ein:", "2500"), 10);
+      const userCalorieGoal = parseInt(
+        prompt("Bitte geben Sie Ihr tägliches Kalorienziel ein:", "2500"),
+        10
+      );
+
       if (isNaN(userCalorieGoal) || userCalorieGoal <= 0) {
         alert("Ungültiges Kalorienziel. Standardwert von 2500 wird verwendet.");
         setDailyCalorieGoal(2500);
@@ -27,7 +37,7 @@ export default function Tracker() {
         localStorage.setItem("dailyCalorieGoal", userCalorieGoal);
       }
 
-      // Reset totals and delete all meals for a new day
+      // Setzt die Werte für einen neuen Tag zurück
       deleteAllMeals();
       setMeals([]);
       setTotals({
@@ -46,67 +56,65 @@ export default function Tracker() {
           totalProteins: 0,
         })
       );
-      localStorage.removeItem("meals"); // Clear meals from local storage for the new day
+      localStorage.removeItem("meals");
     } else {
-      // Load totals, meals, and calorie goal from localStorage
+      // Lädt gespeicherte Daten aus dem LocalStorage
       const storedTotals = JSON.parse(localStorage.getItem("totals"));
       const storedMeals = JSON.parse(localStorage.getItem("meals"));
       const storedCalorieGoal = parseInt(localStorage.getItem("dailyCalorieGoal"), 10);
 
-      if (storedTotals) {
-        setTotals(storedTotals);
-      }
-      if (storedMeals) {
-        setMeals(storedMeals);
-      }
-      if (storedCalorieGoal) {
-        setDailyCalorieGoal(storedCalorieGoal);
-      }
+      if (storedTotals) setTotals(storedTotals);
+      if (storedMeals) setMeals(storedMeals);
+      if (storedCalorieGoal) setDailyCalorieGoal(storedCalorieGoal);
     }
   };
 
-  // Fetch meals from the API
+  /**
+   * Ruft die Mahlzeiten vom Backend-Server ab und berechnet die Gesamtnährwerte.
+   */
   const fetchMeals = () => {
     fetch("http://localhost:8080/api/meals")
       .then((r) => r.json())
       .then((qs) => {
         setMeals(qs);
         calculateTotals(qs);
-        localStorage.setItem("meals", JSON.stringify(qs)); // Store meals in local storage for persistence
+        localStorage.setItem("meals", JSON.stringify(qs));
       })
       .catch((error) => {
         console.error("Error fetching meals:", error);
       });
   };
 
-  // Delete all meals from the server
+  /**
+   * Löscht alle Mahlzeiten auf dem Server, um den Tag zurückzusetzen.
+   */
   const deleteAllMeals = () => {
-    fetch("http://localhost:8080/api/meals", {
-      method: "DELETE",
-    })
+    fetch("http://localhost:8080/api/meals", { method: "DELETE" })
       .then((response) => {
-        if (response.ok) {
-          console.log("All meals deleted for the new day");
-        } else {
-          console.error("Failed to delete meals");
-        }
+        if (response.ok) console.log("All meals deleted for the new day");
+        else console.error("Failed to delete meals");
       })
       .catch((error) => {
         console.error("Error deleting meals:", error);
       });
   };
 
-  // Simulate a new day by setting an old date in localStorage
+  /**
+   * Simuliert einen neuen Tag, indem ein altes Datum gespeichert wird.
+   */
   const simulateNewDay = () => {
-    localStorage.setItem("lastUpdatedDate", "2000-01-01"); // Set an old date to simulate a new day
-    checkAndResetForNewDay(); // Apply the reset logic
+    localStorage.setItem("lastUpdatedDate", "2000-01-01");
+    checkAndResetForNewDay();
   };
 
   useEffect(() => {
-    checkAndResetForNewDay();
-    fetchMeals(); // Load meals from the backend
+    checkAndResetForNewDay(); // Überprüft den Tag bei Start
+    fetchMeals(); // Lädt die Mahlzeiten
   }, []);
 
+  /**
+   * Berechnet die Gesamtkalorien, Fette, Kohlenhydrate und Proteine basierend auf den Mahlzeiten.
+   */
   const calculateTotals = (meals) => {
     let totalCalories = 0;
     let totalFat = 0;
@@ -135,6 +143,9 @@ export default function Tracker() {
 
   const progressPercentage = ((totals.totalCalories / dailyCalorieGoal) * 100).toFixed(1);
 
+  /**
+   * Rendert die Benutzeroberfläche, einschließlich Fortschrittsanzeige und Mahlzeitdetails.
+   */
   return (
     <>
       <h1>Willkommen zum Kalorientracker / Fortschritt</h1>
@@ -153,7 +164,7 @@ export default function Tracker() {
         <p>Proteine insgesamt: {totals.totalProteins} g</p>
         <hr />
         <h2>Details der Mahlzeiten</h2>
-        <div className='meal-table'>
+        <div className="meal-table">
           <table>
             <thead>
               <tr>
@@ -208,25 +219,6 @@ export default function Tracker() {
           </table>
         </div>
       </div>
-
-      <style jsx>{`
-        .progress-bar-container {
-          width: 100%;
-          background-color: #e0e0e0;
-          border-radius: 5px;
-          overflow: hidden;
-          height: 25px;
-          margin-bottom: 10px;
-        }
-        .progress-bar {
-          height: 100%;
-          background-color: #4caf50;
-          text-align: center;
-          color: white;
-          line-height: 25px;
-          border-radius: 5px 0 0 5px;
-        }
-      `}</style>
     </>
   );
 }
